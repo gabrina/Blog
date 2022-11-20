@@ -12,6 +12,7 @@
             <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است.</p>
         </div>
         <div class="row gutters-40 menu-list" id="no-equal-gallery">
+
             @if (articles.Count > 0)
             {
                 @foreach (var article in Model.Articles)
@@ -19,8 +20,8 @@
                     <div class="col-lg-4 col-md-6 col-sm-6 col-12 no-equal-item">
                         <div class="blog-box-layout5">
                             <div class="item-img">
-                                <a href="single-blog.html"><img src="@article.Picture" alt="@article.PictureAlt" title="@article.PictureTitle"></a>
-                                <a href="single-blog.html" class="hover-icon">
+                                <a asp-page="/Articles/Details" asp-route-id="@article.Id"><img src="@article.Picture" alt="@article.PictureAlt" title="@article.PictureTitle"></a>
+                                <a asp-page="/Articles/Details" asp-route-id="@article.Id" class="hover-icon">
                                     <span></span>
                                     <span></span>
                                     <span></span>
@@ -28,15 +29,11 @@
                             </div>
                             <div class="item-content">
                                 <ul class="entry-meta meta-color-dark">
-                                    <li><i class="fas fa-tag"></i>@article.Title</li>
+                                    <li><i class="fas fa-tag"></i>طراحی</li>
                                     <li><i class="fas fa-calendar-alt"></i>@article.CreateDate.ToShortDateString()</li>
                                     <li><i class="far fa-clock"></i>5 دقیقه خواندن</li>
                                 </ul>
-                                <h3 class="item-title">
-                                    <a href="single-blog.html">
-                                        @article.ShortDescription
-                                    </a>
-                                </h3>
+                                <h3 class="item-title"><a asp-page="/Articles/Details" asp-route-id="@article.Id" >@article.Title</a></h3>
                             </div>
                         </div>
                     </div>
@@ -44,12 +41,14 @@
             }
             else
             {
-                <h4 class="text-danger">No article found</h4>
+                <h3 class="text-danger">
+                    مقاله ای وجود ندارد
+                </h3>
             }
 
-        </div>
-        <div class="loadmore-btn-layout1">
-            <a href="#" class="item-btn">بارگیری بیشتر</a>
+
+
+
         </div>
     </div>
 </section>

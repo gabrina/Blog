@@ -22,4 +22,12 @@
     </Content>
   </ItemGroup>
 
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Pages\Articles\Details.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Pages\Articles\Details.cshtml" />
+  </ItemGroup>
+
 </Project>

@@ -1,0 +1,46 @@
+﻿@page
+@model TestRazorApp.Pages.Articles.DetailsModel
+@{
+}
+
+
+        <!-- Single Blog Banner Start Here -->
+        <section class="single-blog-wrap-layout2">
+            <div class="container">
+                <div class="single-blog-box-layout2">
+                    <div class="blog-banner">
+                        <img class="center responsive" style="display:block; margin-left:auto; margin-right:auto; width:auto" src="@Model.Article.Picture" alt="@Model.Article.PictureAlt" title="@Model.Article.PictureTitle">
+                    </div>
+                    <div class="single-blog-content">
+                        <div class="blog-entry-content">
+                            <ul class="entry-meta meta-color-dark">
+                            <li><i class="fas fa-tag"></i>سفر</li>
+                            <li><i class="fas fa-calendar-alt"></i>@Model.Article.CreateDate.ToShortDateString()</li>
+                            <li><i class="fas fa-user"></i>توسط <a href="#">Gabrina</a></li>
+                            <li><i class="far fa-clock"></i>5 دقیقه خواندن</li>
+                        </ul>
+                        <h2 class="item-title">@Model.Article.Title</h2>
+                            @*<ul class="item-social">
+                            <li><a href="#" class="facebook"><i class="fab fa-facebook-f"></i>اشتراک</a></li>
+                            <li><a href="#" class="twitter"><i class="fab fa-twitter"></i>اشتراک</a></li>
+                            <li><a href="#" class="g-plus"><i class="fab fa-google-plus-g"></i>اشتراک</a></li>
+                            <li><a href="#" class="pinterst"><i class="fab fa-pinterest"></i>پین آن</a></li>
+                            <li><a href="#" class="load-more"><i class="fas fa-plus"></i>بیشتر</a></li>*@
+                            </ul>
+                            <ul class="response-area">
+                                <li><a href="#"><i class="far fa-comment"></i>02</a></li>
+                                <li><a href="#"><i class="far fa-eye"></i>105</a></li>
+                                <li><a href="#"><i class="far fa-heart"></i>225</a></li>
+                                <li><a href="#"><i class="fas fa-share"></i>302</a></li>
+                            </ul>
+                        </div>
+                        <div class="blog-details">
+                            <p>
+                                @Model.Article.Body
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Single Blog Banner End Here -->
