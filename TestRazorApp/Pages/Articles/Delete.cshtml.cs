@@ -5,24 +5,26 @@ using TestRazorApp.Models;
 
 namespace TestRazorApp.Pages.Articles
 {
-    public class EditModel : PageModel
+    public class DeleteModel : PageModel
     {
         private readonly BlogDbContext _db;
-        public EditModel(BlogDbContext db)
+        public DeleteModel(BlogDbContext db)
         {
             _db = db;
         }
-        [BindProperty]
+       
         public Article Article { get; set; }
         public void OnGet(int? id)
         {
-            Article = _db.Articles.Find(id);   
+            Article = _db.Articles.Find(id);
         }
 
-        public async Task<IActionResult> OnPost()
+        public async Task<IActionResult> OnPost(int? id)
         {
+            var article = await _db.Articles.FindAsync(id);
+
             /*if(ModelState.IsValid)*//* -->Server-Side Validation*/
-            _db.Articles.Update(Article);
+            _db.Articles.Remove(article);
             await _db.SaveChangesAsync();
 
             return RedirectToPage("/Index");
