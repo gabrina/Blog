@@ -34,6 +34,9 @@
                                         <h6 class="font-weight-bold my-2">@article.CreateDate.ToShortDateString()</h6>
                                         <div class="text-right">
                                             <button class="btn btn-info">
+                                                <a asp-page="Details" asp-route-id="@article.Id" class="text-light">مشاهده</a>@* we need to know whcih article to view*@
+                                            </button>
+                                            <button class="btn btn-success">
                                                 <a asp-page="Edit" asp-route-id="@article.Id" class="text-light">ویرایش</a>@* we need to know whcih article to edit*@
                                             </button>
                                             <button class="btn btn-danger">
